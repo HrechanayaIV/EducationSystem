@@ -1,7 +1,7 @@
 package com.hrechana.educationSystem.services;
 
 import com.hrechana.educationSystem.entity.Student;
-import com.hrechana.educationSystem.repositories.StudentDAOIml;
+import com.hrechana.educationSystem.repositories.StudentDAOImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,7 +10,7 @@ import java.util.List;
 @Service
 public class StudentServiceImpl implements StudentService{
     @Autowired
-    private StudentDAOIml studentRepository;
+    private StudentDAOImpl studentRepository;
 
     @Override
     public Student getById(Long id) {

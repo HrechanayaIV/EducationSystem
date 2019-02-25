@@ -1,6 +1,8 @@
 package com.hrechana.educationSystem.repositories;
 
 import com.hrechana.educationSystem.entity.Student;
+import org.aspectj.lang.annotation.Before;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -9,12 +11,13 @@ import javax.persistence.PersistenceContext;
 import java.util.List;
 
 @Repository
-public class StudentDAOIml implements StudentDAO {
+public class StudentDAOImpl implements StudentDAO {
 
     private static final String GET_ALL_QUERY = "FROM Student";
 
     @PersistenceContext
     EntityManager entityManager;
+
 
     @Override
     public Student getById(Long id) {

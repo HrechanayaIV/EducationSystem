@@ -1,5 +1,5 @@
 Create University
-url: localhost:8080/university
+url: http://localhost:8080/university
 method: post
 body: university JSON
 example: {
@@ -8,15 +8,15 @@ example: {
          }
          
 Get University
-url: localhost:8080/university/1
+url: http://localhost:8080/university/1
 method: get
          
 Get all University
-url: localhost:8080/universities
+url: http://localhost:8080/universities
 method: get
 
 Update University
-url: localhost:8080/university
+url: http://localhost:8080/university
 method: put
 body: university JSON
 example: {
@@ -26,7 +26,7 @@ example: {
          }
          
 Delete University
-url: localhost:8080/university/1
+url: http://localhost:8080/university/1
 method: delete
 
 Create Student 

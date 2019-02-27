@@ -5,12 +5,9 @@ import com.hrechana.educationSystem.entity.Student;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -18,6 +15,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @RunWith(SpringRunner.class)
 @ContextConfiguration(classes = EducationSystemApplication.class)
+@Transactional
 public class StudentRepositoryTests {
 
     @Autowired
@@ -45,13 +43,12 @@ public class StudentRepositoryTests {
     public void testCreate(){
         Student student = new Student("Name", "Specialization");
         Student createdStudent = studentRepository.create(student);
-        Student student1 = new Student(4L,"Name", "Specialization");
-        assertThat(createdStudent).isEqualTo(student1);
+        assertThat(createdStudent).isEqualTo(student);
     }
 
     @Test
     public void testUpdate(){
-        Student student = new Student(3L,"Name", "Specialization");
+        Student student = new Student(1L,"Name", "Specialization");
         Student updatedStudent = studentRepository.update(student);
         assertThat(updatedStudent).isEqualTo(student);
     }
